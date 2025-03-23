@@ -1,54 +1,58 @@
 ---
 // @ts-ignore
-import { Icon } from "astro-icon/components";
 
 const features = [
   {
-    title: "Bring Your Own Framework",
+    title: "Tokenized Real-World Assets",
     description:
-      "Build your site using React, Svelte, Vue, Preact, web components, or just plain ol' HTML + JavaScript.",
-    icon: "bx:bxs-briefcase",
+      "Invest in projects backed by tangible assets using fully traceable ERC20 tokens.Invest in projects backed by tangible assets using fully traceable ERC20 tokens.",
+    icon: "fa-coins",
   },
   {
-    title: "100% Static HTML, No JS",
+    title: "Smart Analysis, Human-Backed",
     description:
-      "Astro renders your entire page to static HTML, removing all JavaScript from your final build by default.",
-    icon: "bx:bxs-window-alt",
+      "Each project is evaluated using AI-based scoring and validated by expert reviewers for maximum confidence.",
+    icon: "fa-brain",
   },
   {
-    title: "On-Demand Components",
+    title: "Community-Led Voting System",
     description:
-      "Need some JS? Astro can automatically hydrate interactive components when they become visible on the page.  ",
-    icon: "bx:bxs-data",
+      "Projects go through a transparent DAO-style selection pool where the most supported ideas reach funding stage.",
+    icon: "fa-box-open",
   },
   {
-    title: "Broad Integration",
+    title: "Community-Driven DAO",
     description:
-      "Astro supports TypeScript, Scoped CSS, CSS Modules, Sass, Tailwind, Markdown, MDX, and any other npm packages.",
-    icon: "bx:bxs-bot",
+      "Users earn dynamic NFTs that reflect their activity and prestige in the platform, unlocking perks and voting power.",
+    icon: "fa-users",
   },
   {
-    title: "SEO Enabled",
+    title: "Secondary Market & DeFi Hook",
     description:
-      "Automatic sitemaps, RSS feeds, pagination and collections take the pain out of SEO and syndication. It just works!",
-    icon: "bx:bxs-file-find",
+      "Buy, sell or use your tokens as collateral via Uniswap hooks, enabling liquidity and financial utility from day one.",
+    icon: "fa-shop",
   },
   {
-    title: "Community",
+    title: "Transparent On-Chain Traceability",
     description:
-      "Astro is an open source project powered by hundreds of contributors making thousands of individual contributions.",
-    icon: "bx:bxs-user",
+      "All ownership changes and project updates are logged on-chain, with an external hash-verification system to ensure full data integrity.",
+    icon: "fa-link", // Cambiado de fa-think-peaks a fa-link
+  },
+  {
+    title: "Built for Web3 & Beyond",
+    description:
+      "Connect your wallet, track investments, vote, and grow your reputation — all in a clean, user-first interface.",
+    icon: "fa-wrench",
   },
 ];
 ---
 
 <div class="mt-16 md:mt-0">
   <h2 class="text-4xl lg:text-5xl font-bold lg:tracking-tight">
-    Everything you need to start a website
+    Built for the future of investing. Powered by real assets.
   </h2>
   <p class="text-lg mt-4 text-slate-600">
-    Astro comes batteries included. It takes the best parts of state-of-the-art
-    tools and adds its own innovations.
+    Innovanet gives you the tools to invest in real, impactful projects backed by tokenized assets and community validation.
   </p>
 </div>
 
@@ -56,11 +60,11 @@ const features = [
   {
     features.map((item) => (
       <div class="flex gap-4 items-start">
-        <div class="mt-1 bg-black rounded-full  p-2 w-8 h-8 shrink-0">
-          <Icon class="text-white" name={item.icon} />
+        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0 flex items-center justify-center">
+          <i class={`fa-solid ${item.icon} text-white text-sm`}></i>
         </div>
         <div>
-          <h3 class="font-semibold text-lg">{item.title}</h3>{" "}
+          <h3 class="font-semibold text-lg">{item.title}</h3>
           <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
         </div>
       </div>

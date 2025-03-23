@@ -26,3 +26,24 @@
     border-color: var(--color-gray-200, currentColor);
   }
 }
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 40s linear infinite;
+}
+
+.animate-slide:hover {
+  animation-play-state: active;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}

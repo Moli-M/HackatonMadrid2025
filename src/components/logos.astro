@@ -1,18 +1,86 @@
 ---
 // @ts-ignore
-import { Icon } from "astro-icon/components";
+import AIR from "@/assets/air-logo.svg";
+import ALASTRIA from "@/assets/alastria-logo.svg";
+import TELEFONICA from "@/assets/telefonica-logo.svg";
+import QUBIC from "@/assets/qubic-logo.svg";
+import VOTTUN from "@/assets/vottun-logo2.svg";
+import Picture from "astro/components/Picture.astro";
+
+// Características para "Who do we help?"
+const additionalFeatures = [
+  {
+    title: "Real-world project creators",
+    description: "including cooperatives, startups, and municipalities — seeking accessible, transparent funding.",
+    icon: "fa-shield-halved",
+  },
+  {
+    title: "Educators, technicians, and makers",
+    description: "Obtén rendimientos adicionales por mantener tus tokens bloqueados y apoyar el ecosistema.",
+    icon: "fa-sack-dollar",
+  },
+  {
+    title: "Reportes Personalizados",
+    description: "Análisis detallados del rendimiento de tus inversiones con métricas avanzadas.",
+    icon: "fa-chart-pie",
+  },
+  {
+    title: "Reportes Personalizados",
+    description: "Análisis detallados del rendimiento de tus inversiones con métricas avanzadas.",
+    icon: "fa-chart-pie",
+  }
+];
 ---
 
 <div class="mt-24">
-  <h2 class="text-center text-slate-500">Works with your technologies</h2>
-  <div class="flex gap-8 md:gap-20 items-center justify-center mt-10 flex-wrap">
-
-    <Icon class="size-8 md:size-12" name="simple-icons:react" />
-    <Icon class="size-8 md:size-12" name="simple-icons:svelte" />
-    <Icon class="size-8 md:size-12" name="simple-icons:astro" />
-    <Icon class="size-8 md:size-16" name="simple-icons:tailwindcss" />
-    <Icon class="size-8 md:size-16" name="simple-icons:alpinedotjs" />
-    <Icon class="size-8 md:size-12" name="simple-icons:vercel" />
-
+  <div class="flex items-center justify-center gap-4 md:gap-8 mt-24">
+    <div class="h-px bg-slate-300 w-16 md:w-32 lg:w-64"></div>
+    <h2 class="text-4xl lg:text-4xl text-center font-bold lg:tracking-tight">
+      OUR PARTNERS
+    </h2>
+    <div class="h-px bg-slate-300 w-16 md:w-32 lg:w-64"></div>
   </div>
+  
+  <div class="relative w-full overflow-hidden mt-10">
+    <div class="animate-slide flex whitespace-nowrap">
+      <div class="flex items-center gap-8 md:gap-20 flex-shrink-0">
+        <Picture src={AIR} alt="AIR logo" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" />
+        <Picture src={ALASTRIA} alt="ALASTRIA logo" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" />
+        <Picture src={TELEFONICA} alt="TELEFONICA logo" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" />
+        <Picture src={QUBIC} alt="QUBIC logo" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" />
+        <Picture src={VOTTUN} alt="VOTTUN logo" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" />
+      </div>
+      
+      <div class="inline-block w-8 md:w-20 flex-shrink-0"></div>
+      
+      <div class="flex items-center gap-8 md:gap-20 flex-shrink-0">
+        <Picture src={AIR} alt="AIR logo" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" />
+        <Picture src={ALASTRIA} alt="ALASTRIA logo" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" />
+        <Picture src={TELEFONICA} alt="TELEFONICA logo" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" />
+        <Picture src={QUBIC} alt="QUBIC logo" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" />
+        <Picture src={VOTTUN} alt="VOTTUN logo" widths={[200, 400, 600]} sizes="(max-width: 800px) 100vw, 620px" loading="eager" format="avif" />
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="mt-32">
+  <h2 class="text-3xl lg:text-4xl font-bold text-left mb-12">
+    Who do we help?
+  </h2>
+  
+  <div class="grid sm:grid-cols-2 gap-8 max-w-6xl mx-auto">
+    {
+      additionalFeatures.map((feature) => (
+        <div class="bg-white p-6 rounded-lg shadow-md transition-all hover:shadow-xl">
+          <div class="bg-black w-12 h-12 rounded-lg mb-4 flex items-center justify-center">
+            <i class={`fa-solid ${feature.icon} text-white text-xl`}></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2">{feature.title}</h3>
+          <p class="text-gray-600">{feature.description}</p>
+        </div>
+      ))
+    }
+  </div>
+</div>
 </div>
