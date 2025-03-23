@@ -47,3 +47,47 @@
 .cursor-pointer {
   cursor: pointer;
 }
+/* Ajustar escala de texto global manteniendo proporciones */
+:root {
+  --text-scale: 1;
+  --line-height-scale: 1;
+}
+
+html {
+  font-size: calc(100% * var(--text-scale));
+}
+
+body {
+  line-height: calc(1.5 * var(--line-height-scale));
+}
+
+/* Estilos para el modo de alto contraste */
+body.high-contrast-mode {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast-mode a {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+
+body.high-contrast-mode button,
+body.high-contrast-mode input,
+body.high-contrast-mode .bg-white,
+body.high-contrast-mode nav,
+body.high-contrast-mode header,
+body.high-contrast-mode footer {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Ocultamiento de multimedia */
+body.hide-multimedia img,
+body.hide-multimedia video,
+body.hide-multimedia iframe,
+body.hide-multimedia canvas,
+body.hide-multimedia svg {
+  display: none !important;
+}
