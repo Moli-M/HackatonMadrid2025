@@ -339,4 +339,4 @@ private:
         state.numHolders = 0;
         state.numProposals = 0;
     _
-};
+}; 
