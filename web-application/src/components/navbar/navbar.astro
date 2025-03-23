@@ -24,14 +24,11 @@ const menuitems = [
 
 <Container>
   <header class="flex items-center justify-between py-4">
-    <!-- Logo -->
     <a href="/" class="text-lg font-bold">
       <span class="text-slate-800">INNOVA</span><span class="text-slate-500"
         >NET</span
       >
     </a>
-
-    <!-- Navigation -->
     <Astronav>
       <MenuIcon class="lg:hidden w-5 h-5 text-gray-800 cursor-pointer" />
       <MenuItems class="hidden lg:flex lg:ml-6">
@@ -52,18 +49,14 @@ const menuitems = [
       </MenuItems>
     </Astronav>
 
-    <!-- User Menu -->
     <div class="relative">
       <div class="flex items-center gap-3">
-        <!-- Menú de usuario existente -->
         <button
           id="userMenuBtn"
           class="text-gray-800 p-2 rounded-full hover:bg-gray-100 transition-colors"
         >
           <i class="fa-solid fa-user"></i>
         </button>
-
-        <!-- Nuevo botón de accesibilidad -->
         <button
   id="accessibilityBtn"
   class="text-gray-800 p-2 rounded-full hover:bg-gray-100 transition-colors"
@@ -72,7 +65,7 @@ const menuitems = [
   <i class="fa-solid fa-universal-access"></i>
 </button>
       </div>
-<!-- Dropdown de accesibilidad -->
+
 <div
   id="accessibilityDropdown"
   class="absolute right-0 top-full mt-2 w-72 bg-white rounded-lg shadow-xl border border-slate-100 invisible opacity-0 transition-all duration-200 transform origin-top-right z-50"
