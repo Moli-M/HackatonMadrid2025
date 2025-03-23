@@ -1,0 +1,147 @@
+/* Estilos para la herramienta de accesibilidad */
+.btn-accesibilidad {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .btn-accesibilidad:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  }
+  
+  .btn-accesibilidad img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .menu-accesibilidad {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    max-height: 80vh;
+    background-color: white;
+    z-index: 1001;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    overflow-y: auto;
+    display: none;
+  }
+  
+  .menu-accesibilidad.open {
+    display: block;
+  }
+  
+  .menu-accesibilidad h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .menu-accesibilidad h3 {
+    margin: 10px 0;
+    color: #444;
+  }
+  
+  .menu-accesibilidad details {
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+  }
+  
+  .menu-accesibilidad summary {
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .menu-accesibilidad summary::-webkit-details-marker {
+    display: none;
+  }
+  
+  .menu-accesibilidad button {
+    margin: 8px 0;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.2s;
+  }
+  
+  .menu-accesibilidad button:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .menu-accesibilidad .btn-save {
+    background-color: #0066cc;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 15px;
+    transition: background-color 0.2s;
+  }
+  
+  .menu-accesibilidad .btn-save:hover {
+    background-color: #0055aa;
+  }
+  
+  .menu-accesibilidad .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: auto;
+    padding: 5px 10px;
+  }
+  
+  .menu-accesibilidad .menu-label {
+    display: block;
+    margin: 10px 0 5px;
+    font-size: 14px;
+  }
+  
+  .menu-accesibilidad .txt-slider {
+    width: 100%;
+    margin: 5px 0 15px;
+  }
+  
+  .menu-accesibilidad .restablecer-cambios-link {
+    display: inline-block;
+    margin-top: 5px;
+    font-size: 14px;
+    color: #0066cc;
+    text-decoration: none;
+  }
+  
+  /* Responsive */
+  @media (max-width: 480px) {
+    .menu-accesibilidad {
+      width: 90%;
+      max-height: 85vh;
+    }
+  }
