@@ -1,0 +1,226 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Container from "@/components/container.astro";
+import { Icon } from "astro-icon/components";
+
+// Datos de ejemplo para proyectos
+const projects = [
+  {
+    id: 1,
+    title: "Comunidad Solar Villanueva",
+    category: "Energía Renovable",
+    location: "Madrid, España",
+    description: "Instalación de paneles solares comunitarios para 120 hogares, reduciendo costes energéticos hasta un 70%.",
+    image: "/projects/solar-community.jpg",
+    raised: 85000,
+    goal: 120000,
+    investors: 178,
+    roi: "8-12%",
+    status: "active",
+    tags: ["solar", "community", "green-energy"]
+  },
+  {
+    id: 2,
+    title: "Cooperativa Agrícola Tierra Viva",
+    category: "Agricultura Sostenible",
+    location: "Navarra, España",
+    description: "Transformación de 15 hectáreas a agricultura regenerativa con sistemas de riego inteligente y cultivos orgánicos.",
+    image: "/projects/farm-coop.jpg",
+    raised: 67500,
+    goal: 90000,
+    investors: 132,
+    roi: "7-10%",
+    status: "active",
+    tags: ["agriculture", "organic", "cooperative"]
+  },
+  {
+    id: 3,
+    title: "EcoHousing Barcelona",
+    category: "Vivienda Sostenible",
+    location: "Barcelona, España",
+    description: "Rehabilitación de edificio histórico para crear 12 viviendas de bajo consumo energético y espacios comunes colaborativos.",
+    image: "/projects/eco-housing.jpg",
+    raised: 210000,
+    goal: 350000,
+    investors: 267,
+    roi: "6-9%",
+    status: "active",
+    tags: ["housing", "sustainability", "community"]
+  },
+  {
+    id: 4,
+    title: "ReCycle Madrid",
+    category: "Economía Circular",
+    location: "Madrid, España",
+    description: "Centro de reciclaje y reutilización de componentes electrónicos, creando empleo local y reduciendo residuos tecnológicos.",
+    image: "/projects/recycle.jpg",
+    raised: 45000,
+    goal: 80000,
+    investors: 94,
+    roi: "5-8%",
+    status: "active",
+    tags: ["recycling", "technology", "circular-economy"]
+  },
+  {
+    id: 5,
+    title: "Movilidad Compartida Valencia",
+    category: "Transporte Sostenible",
+    location: "Valencia, España",
+    description: "Flota de 50 vehículos eléctricos compartidos para barrios periféricos con conexión a transporte público.",
+    image: "/projects/shared-mobility.jpg",
+    raised: 125000,
+    goal: 200000,
+    investors: 213,
+    roi: "7-11%",
+    status: "active",
+    tags: ["mobility", "electric", "sharing-economy"]
+  },
+  {
+    id: 6,
+    title: "AguaLimpia - Sistemas de Purificación",
+    category: "Gestión de Agua",
+    location: "Sevilla, España",
+    description: "Instalación de sistemas de purificación de agua en 5 municipios rurales, beneficiando a más de 3,000 habitantes.",
+    image: "/projects/water-purification.jpg",
+    raised: 98000,
+    goal: 150000,
+    investors: 176,
+    roi: "6-9%",
+    status: "active",
+    tags: ["water", "rural-development", "infrastructure"]
+  }
+];
+
+// Categorías disponibles para filtrar
+const categories = [
+  "Todas", 
+  "Energía Renovable", 
+  "Agricultura Sostenible", 
+  "Vivienda Sostenible", 
+  "Economía Circular",
+  "Transporte Sostenible",
+  "Gestión de Agua"
+];
+---
+
+<Layout title="Proyectos | Innovanet">
+  <Container>
+    <div class="mt-16 mb-12">
+      <h1 class="text-5xl font-bold mb-4">Proyectos con impacto real</h1>
+      <p class="text-xl text-slate-600 max-w-3xl">
+        Invierte en iniciativas comunitarias verificadas que generan valor social, ambiental y económico, respaldadas por activos tangibles.
+      </p>
+    </div>
+
+    <!-- Filtros de categoría -->
+    <div class="mb-12 flex flex-wrap gap-3">
+      {categories.map((category, index) => (
+        <button 
+          class={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+            index === 0 
+              ? "bg-blue-600 text-white" 
+              : "bg-slate-100 text-slate-800 hover:bg-slate-200"
+          }`}>
+          {category}
+        </button>
+      ))}
+    </div>
+
+    <!-- Barra de búsqueda y ordenamiento -->
+    <div class="flex flex-col sm:flex-row justify-between gap-4 mb-12">
+      <div class="relative max-w-md w-full">
+        <input 
+          type="text" 
+          placeholder="Buscar proyectos..." 
+          class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+        />
+        <i class="fa-solid fa-magnifying-glass absolute right-3 top-1/2 -translate-y-1/2 text-slate-400"></i>
+      </div>
+      
+      <div class="flex gap-4 items-center">
+        <span class="text-slate-600">Ordenar por:</span>
+        <select class="px-4 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <option>Mayor financiación</option>
+          <option>Más recientes</option>
+          <option>Mayor ROI</option>
+          <option>Popularidad</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Listado de proyectos -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      {projects.map((project) => (
+        <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow">
+          <div class="h-48 overflow-hidden relative">
+            <img 
+              src={project.image || "https://via.placeholder.com/600x400"} 
+              alt={project.title}
+              class="w-full h-full object-cover"
+            />
+            <div class="absolute top-4 left-4 bg-white px-3 py-1 rounded-full text-sm font-medium text-blue-600">
+              {project.category}
+            </div>
+            <div class="absolute top-4 right-4 bg-black bg-opacity-70 px-3 py-1 rounded-full text-sm font-medium text-white">
+              ROI: {project.roi}
+            </div>
+          </div>
+          
+          <div class="p-6">
+            <div class="flex items-center text-sm text-slate-500 mb-2">
+              <i class="fa-solid fa-location-dot mr-2"></i>
+              {project.location}
+            </div>
+            
+            <h3 class="text-xl font-bold mb-2">{project.title}</h3>
+            <p class="text-slate-600 mb-4 line-clamp-2">{project.description}</p>
+            
+            <!-- Progreso de financiación -->
+            <div class="mb-4">
+              <div class="flex justify-between text-sm mb-1">
+                <span class="font-medium">{Math.round((project.raised / project.goal) * 100)}% financiado</span>
+                <span>{project.raised.toLocaleString()}€ de {project.goal.toLocaleString()}€</span>
+              </div>
+              <div class="w-full bg-slate-200 rounded-full h-2.5">
+                <div 
+                  class="bg-blue-600 h-2.5 rounded-full" 
+                  style={`width: ${Math.min(100, Math.round((project.raised / project.goal) * 100))}%`}>
+                </div>
+              </div>
+            </div>
+            
+            <div class="flex justify-between items-center">
+              <div class="text-sm text-slate-500">
+                <i class="fa-solid fa-users mr-1"></i>
+                {project.investors} inversores
+              </div>
+              
+              <a href={`/projects/${project.id}`} class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors">
+                Ver proyecto
+              </a>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Paginación -->
+    <div class="flex justify-center items-center gap-2 mb-16">
+      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-300 text-slate-700 hover:bg-slate-100">
+        <i class="fa-solid fa-chevron-left"></i>
+      </a>
+      
+      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-blue-600 text-white">1</a>
+      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-300 text-slate-700 hover:bg-slate-100">2</a>
+      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-300 text-slate-700 hover:bg-slate-100">3</a>
+      
+      <span class="mx-1">...</span>
+      
+      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-300 text-slate-700 hover:bg-slate-100">8</a>
+      
+      <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full border border-slate-300 text-slate-700 hover:bg-slate-100">
+        <i class="fa-solid fa-chevron-right"></i>
+      </a>
+    </div>
+  </Container>
+</Layout>

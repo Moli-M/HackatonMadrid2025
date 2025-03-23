@@ -1,14 +1,99 @@
-<footer class="my-20 bg-black p-8">
-  <p class="text-center text-sm text-white">
-    Copyright © {new Date().getFullYear()}. All rights reserved.
-  </p>
-  <p class="text-center text-xs text-white mt-1">
-    MADE BY <a
-      href="#"
-      target="_blank"
-      rel="noopener"
-      class="hover:underline">
-      ORACLE HUNTERS
-    </a>
-  </p>
+---
+const footerLinks = [
+  {
+    title: "Platform",
+    links: [
+      { text: "Projects", href: "/projects" },
+      { text: "How it works", href: "/how-it-works" },
+      { text: "Tokenization", href: "/tokenization" },
+      { text: "Governance", href: "/governance" },
+    ],
+  },
+  {
+    title: "Company",
+    links: [
+      { text: "About us", href: "/about" },
+      { text: "Team", href: "/team" },
+      { text: "Partners", href: "/partners" },
+      { text: "Press", href: "/press" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { text: "Documentation", href: "/docs" },
+      { text: "FAQ", href: "/faq" },
+      { text: "Contact", href: "/contact" },
+    ],
+  },
+];
+
+const socialLinks = [
+  { name: "LinkedIn", icon: "fa-linkedin", url: "#" },
+  { name: "GitHub", icon: "fa-github", url: "#" },
+  { name: "Discord", icon: "fa-discord", url: "#" },
+];
+---
+
+<footer class="bg-black text-white py-12 mt-20">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-6 gap-8">
+      <!-- Logo and description -->
+      <div class="md:col-span-2">
+        <a href="/" class="text-lg"
+          ><span class="font-bold text-white">INNOVA</span><span
+            class="text-slate-500">NET</span
+          >
+        </a>
+        <p class="mt-4 text-slate-400 text-sm">
+          InnovaNet connects investors with real impact projects through transparent asset tokenization verified by the community.
+        </p>
+        
+        <div class="mt-6 flex space-x-4">
+          {socialLinks.map((link) => (
+            <a href={link.url} aria-label={link.name} class="text-slate-400 hover:text-white transition-colors">
+              <i class={`fa-brands ${link.icon} text-xl`}></i>
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {footerLinks.map((section) => (
+        <div class="md:col-span-1">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">
+            {section.title}
+          </h3>
+          <ul class="space-y-2">
+            {section.links.map((link) => (
+              <li>
+                <a href={link.href} class="text-sm text-slate-400 hover:text-white transition-colors">
+                  {link.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+
+    <div class="border-t border-slate-800 mt-12 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-sm text-slate-400 text-center md:text-left">
+          &copy; {new Date().getFullYear()} InnovaNet. All rights reserved.
+        </p>
+        
+        <div class="mt-4 md:mt-0 flex space-x-6">
+          <a href="/terms" class="text-sm text-slate-400 hover:text-white transition-colors">
+            Terms
+          </a>
+          <a href="/privacy" class="text-sm text-slate-400 hover:text-white transition-colors">
+            Privacy
+          </a>
+          <a href="/cookies" class="text-sm text-slate-400 hover:text-white transition-colors">
+            Cookies
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 </footer>
