@@ -1,0 +1,73 @@
+---
+// @ts-ignore
+
+const features = [
+  {
+    title: "Tokenized Real-World Assets",
+    description:
+      "Invest in projects backed by tangible assets using fully traceable ERC20 tokens.Invest in projects backed by tangible assets using fully traceable ERC20 tokens.",
+    icon: "fa-coins",
+  },
+  {
+    title: "Smart Analysis, Human-Backed",
+    description:
+      "Each project is evaluated using AI-based scoring and validated by expert reviewers for maximum confidence.",
+    icon: "fa-brain",
+  },
+  {
+    title: "Community-Led Voting System",
+    description:
+      "Projects go through a transparent DAO-style selection pool where the most supported ideas reach funding stage.",
+    icon: "fa-box-open",
+  },
+  {
+    title: "Community-Driven DAO",
+    description:
+      "Users earn dynamic NFTs that reflect their activity and prestige in the platform, unlocking perks and voting power.",
+    icon: "fa-users",
+  },
+  {
+    title: "Secondary Market & DeFi Hook",
+    description:
+      "Buy, sell or use your tokens as collateral via Uniswap hooks, enabling liquidity and financial utility from day one.",
+    icon: "fa-shop",
+  },
+  {
+    title: "Transparent On-Chain Traceability",
+    description:
+      "All ownership changes and project updates are logged on-chain, with an external hash-verification system to ensure full data integrity.",
+    icon: "fa-link", // Cambiado de fa-think-peaks a fa-link
+  },
+  {
+    title: "Built for Web3 & Beyond",
+    description:
+      "Connect your wallet, track investments, vote, and grow your reputation — all in a clean, user-first interface.",
+    icon: "fa-wrench",
+  },
+];
+---
+
+<div class="mt-16 md:mt-0">
+  <h2 class="text-4xl lg:text-4xl font-bold lg:tracking-tight">
+    Built for the future of investing. Powered by real assets.
+  </h2>
+  <p class="text-lg mt-4 text-slate-600">
+    Innovanet gives you the tools to invest in real, impactful projects backed by tokenized assets and community validation.
+  </p>
+</div>
+
+<div class="grid sm:grid-cols-2 md:grid-cols-3 mt-16 gap-16">
+  {
+    features.map((item) => (
+      <div class="flex gap-4 items-start">
+        <div class="mt-1 bg-black rounded-full p-2 w-8 h-8 shrink-0 flex items-center justify-center">
+          <i class={`fa-solid ${item.icon} text-white text-sm`}></i>
+        </div>
+        <div>
+          <h3 class="font-semibold text-lg">{item.title}</h3>
+          <p class="text-slate-500 mt-2 leading-relaxed">{item.description}</p>
+        </div>
+      </div>
+    ))
+  }
+</div>

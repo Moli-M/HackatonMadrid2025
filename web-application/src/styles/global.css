@@ -1,0 +1,93 @@
+@import 'tailwindcss';
+
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --font-sans:
+    Bricolage Grotesque Variable, Inter Variable, Inter, ui-sans-serif,
+    system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-slide {
+  animation: slide 40s linear infinite;
+}
+
+.animate-slide:hover {
+  animation-play-state: active;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+/* Ajustar escala de texto global manteniendo proporciones */
+:root {
+  --text-scale: 1;
+  --line-height-scale: 1;
+}
+
+html {
+  font-size: calc(100% * var(--text-scale));
+}
+
+body {
+  line-height: calc(1.5 * var(--line-height-scale));
+}
+
+/* Estilos para el modo de alto contraste */
+body.high-contrast-mode {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+body.high-contrast-mode a {
+  color: #ffff00 !important;
+  text-decoration: underline !important;
+}
+
+body.high-contrast-mode button,
+body.high-contrast-mode input,
+body.high-contrast-mode .bg-white,
+body.high-contrast-mode nav,
+body.high-contrast-mode header,
+body.high-contrast-mode footer {
+  background-color: #000 !important;
+  color: #fff !important;
+  border-color: #fff !important;
+}
+
+/* Ocultamiento de multimedia */
+body.hide-multimedia img,
+body.hide-multimedia video,
+body.hide-multimedia iframe,
+body.hide-multimedia canvas,
+body.hide-multimedia svg {
+  display: none !important;
+}
